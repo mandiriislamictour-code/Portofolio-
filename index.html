@@ -1,0 +1,271 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <style>
+        :root {
+            --bg: #f3eefe;
+            --card: #ffffffcc;
+            --text: #2b2142;
+            --accent: #7c3aed;
+            --accent2: #5b21b6;
+            --gradient: linear-gradient(135deg, #7c3aed, #c4b5fd);
+            --font-main: "Poppins", sans-serif;
+        }* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: var(--font-main);
+    }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        scroll-behavior: smooth;
+    }
+
+    /* NAVBAR */
+    nav {
+        width: 100%;
+        padding: 15px 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        background: rgba(255, 255, 255, 0.45);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid #e6dafe;
+        z-index: 999;
+    }
+
+    nav a {
+        margin-left: 18px;
+        text-decoration: none;
+        color: #5b21b6;
+        font-weight: 600;
+        padding: 6px 10px;
+        border-radius: 8px;
+        transition: 0.25s;
+    }
+
+    nav a:hover {
+        background: var(--accent);
+        color: white;
+    }
+
+    /* HEADER */
+    header {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        padding: 50px;
+    }
+
+    .profile-img {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        border: 4px solid var(--accent);
+        object-fit: cover;
+        margin-bottom: 20px;
+    }
+
+    /* SECTION TITLES */
+    h2.section-title {
+        font-size: 2.4rem;
+        margin-bottom: 20px;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        color: transparent;
+        text-align: center;
+    }
+
+    section {
+        padding: 90px 12%;
+    }
+
+    /* CARDS */
+    .card {
+        background: var(--card);
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+        margin-bottom: 20px;
+    }
+
+    /* TABS */
+    .tabs {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 25px;
+        overflow-x: auto;
+    }
+
+    .tab-btn {
+        padding: 10px 20px;
+        border-radius: 20px;
+        background: var(--accent);
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        transition: 0.3s;
+        white-space: nowrap;
+    }
+
+    .tab-btn:hover, .active-tab {
+        background: var(--accent2);
+    }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* PROJECT IMAGES */
+    .project-img, .exp-img {
+        width: 100%;
+        border-radius: 12px;
+        margin-top: 12px;
+    }
+
+    /* CONTACT */
+    .contact-box {
+        text-align: center;
+        font-size: 1.2rem;
+    }
+</style>
+
+</head>
+<body>
+    <nav>
+        <div class="logo">My Portfolio</div>
+        <div>
+            <a href="#About">About</a>
+            <a href="#Education">Education</a>
+            <a href="#Projects">Projects</a>
+            <a href="#Experience">Experience</a>
+            <a href="#Contact">Contact</a>
+        </div>
+    </nav><header>
+    <div style="position: relative;">
+        <img src="IMG-20251110-WA0013.jpg" class="profile-img" />
+        <a href="https://www.instagram.com/m_alifcuzaspo?igsh=bmRpbDc5N3lsaGJ2" target="_blank" 
+           style="position:absolute; bottom:10px; right:10px; background:white; border-radius:50%; padding:10px; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+            <img src="https://cdn-icons-png.flaticon.com/512/1409/1409946.png" width="28" />
+        </a>
+    </div>
+    <h1>Hi, I'm <span style="color: var(--accent2)">M. Alif Cuzaspo</span></h1>
+    <p>Student • Web Developer • IT progammer</p>
+</header>
+
+
+
+<!-- ABOUT SECTION -->
+<section id="About">
+    <h2 class="section-title">About</h2>
+    <div class="card">
+        <p>Halo, saya adalah siswa smk islamic village, saya lahir pada tanggal 13 may 2009, saya memiliki kemampuan dalam berbicara didepan umum. Selain itu, saya juga memiliki kemampuan ahli pada bidang pemrograman seperti simulasi Cisco packet tracker.</p>
+    </div>
+</section>
+
+<!-- EDUCATION SECTION + TABS -->
+<section id="Education">
+    <h2 class="section-title">Education</h2>
+
+    <div class="tabs">
+        <button class="tab-btn active-tab" onclick="showTab(event,'edu1')">MI Al-Istiqomah</button>
+        <button class="tab-btn" onclick="showTab(event,'edu2')">SMPN 2 kelapa dua </button>
+        <button class="tab-btn" onclick="showTab(event,'edu3')">SMK Islamic Village</button>
+    </div>
+
+    <div id="edu1" class="tab-content active card">MI Al-Istiqomah — Tahun 2015-2021</div>
+    <div id="edu2" class="tab-content card">SMPN 2 kelapa dua — Tahun 2021-2024</div>
+    <div id="edu3" class="tab-content card">SMK Jurusan TKJ — Tahun 2024-sekarang</div>
+</section>
+
+<!-- PROJECT SECTION + PHOTO GRID -->
+<section id="Projects">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="tabs">
+        <button class="tab-btn active-tab" onclick="showTab(event,'p1')">Menggunakan Cisco Packet Tracker</button>
+        <button class="tab-btn" onclick="showTab(event,'p2')">Membuat Kabel LAN RJ-45 </button>
+        <button class="tab-btn" onclick="showTab(event,'p3')">Berbicara didepan Umum</button>
+    </div>
+
+    <div id="p1" class="tab-content active card">
+        <img src="IMG_20250919_090557.jpg" class="project-img" />
+        <p>Portfolio Website</p>
+    </div>
+    <div id="p2" class="tab-content card">
+        <img src="IMG-20250718-WA0002.jpg" class="project-img" />
+        <p>Topologi Jaringan Cisco</p>
+    </div>
+    <div id="p3" class="tab-content card">
+        <img src="IMG-20250917-WA0059.jpg" class="project-img" />
+        <p>Project Lainnya</p>
+    </div>
+</section>
+
+<!-- EXPERIENCE WITH PHOTOS -->
+<section id="Experience">
+    <h2 class="section-title">Experience</h2>
+
+    <div class="tabs">
+        <button class="tab-btn active-tab" onclick="showTab(event,'exp1')">Lomba pidato</button>
+        <button class="tab-btn" onclick="showTab(event,'exp2')">Juara 1 Kelas</button>
+        <button class="tab-btn" onclick="showTab(event,'exp3')">study tour P5BK</button>
+    </div>
+
+    <div id="exp1" class="tab-content active card">
+        <img src="CamScanner 17-09-2025 23.24.jpg" class="exp-img" />
+        <p>PKL sebagai IT Support — 3 Bulan</p>
+    </div>
+    <div id="exp2" class="tab-content card">
+        <img src="CamScanner 17-09-2025 23.26.jpg " class="exp-img" />
+        <p>Pengurus OSIS — Divisi Teknologi</p>
+    </div>
+    <div id="exp3" class="tab-content card">
+        <img src="IMG-20250523-WA0011.jpg" class="exp-img" />
+        <p>Lomba IT Networking</p>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="Contact">
+    <h2 class="section-title">Contact</h2>
+    <div class="card contact-box">
+        Email: muhamaddaliff9@gmail.com <br />
+        Instagram: <a href="https://www.instagram.com/m_alifcuzaspo?igsh=bmRpbDc5N3lsaGJ2" target="_blank" style="color:var(--accent); font-weight:600; text-decoration:none;">@m_alifcuzaspo</a><br />
+        WhatsApp: 081367806220
+    </div>
+</section>
+
+<script>
+    function showTab(evt, tabId) {
+        var tabs = document.querySelectorAll('.tab-content');
+        var btns = document.querySelectorAll('.tab-btn');
+
+        tabs.forEach(t => t.classList.remove('active'));
+        btns.forEach(b => b.classList.remove('active-tab'));
+
+        document.getElementById(tabId).classList.add('active');
+        evt.target.classList.add('active-tab');
+    }
+    const sliderImages = [
+    "https://i.ibb.co/Yt9VjKH/user.png",
+    "https://i.ibb.co/BnZmrts/project1.jpg",
+    "https://i.ibb.co/0F5KpY1/project2.jpg"
+];
+let idx = 0;
+setInterval(() => {
+    idx = (idx + 1) % sliderImages.length;
+    document.getElementById('slideImg').src = sliderImages[idx];
+}, 2500);
+
+</script>
+</body>
+</html>
